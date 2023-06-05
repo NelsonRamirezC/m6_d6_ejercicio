@@ -17,6 +17,12 @@ app.set("views", __dirname + "/views");
 //establecemos el directorio public en modo público.
 app.use(express.static("public"));
 
+//publicamos carpeta dist de boostrap
+app.use(
+    "/bootstrap",
+    express.static(__dirname + "/node_modules/bootstrap/dist/")
+);
+
 //indicamos el puerto por el cual nuestro servidor escuchará las peticiones
 const PORT = 3000;
 app.listen(
@@ -36,5 +42,11 @@ app.get("/about", (req, res) => {
 app.get("/products", (req, res) => {
     res.render("products", {
         productos: ["Pera", "Manzana", "Sandia", "Naranja", "Melón"],
+    });
+});
+
+app.get("/users", (req, res) => {
+    res.render("users", {
+        usuarios: ["Carlos", "Mauricio", "María", "Juana"],
     });
 });
