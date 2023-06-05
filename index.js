@@ -32,3 +32,9 @@ app.get(["/", "/home"], (req, res) => {
 app.get("/about", (req, res) => {
     res.render("about");
 });
+
+app.get("/products", (req, res) => {
+    res.render("products", {
+        productos: ["Pera", "Manzana", "Sandia", "Naranja", "Melón"],
+    });
+});
