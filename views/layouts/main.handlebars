@@ -10,22 +10,12 @@
         <script defer src="/bootstrap/js/bootstrap.bundle.js"></script>
     </head>
     <body>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/home">Home</a>
-                </li>
-                <li>
-                    <a href="/about">About</a>
-                </li>
-                <li>
-                    <a href="/products">Products</a>
-                </li>
-                <li>
-                    <a href="/users">Users</a>
-                </li>
-            </ul>
-        </nav>
-        {{{body}}}
+        {{>navbar 
+            background="bg-success"
+        }}
+        <main class="container">
+            {{{body}}}
+        </main>
+
     </body>
 </html>
